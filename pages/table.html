@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedOut | Users</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>    
+        .user-info-bubble {
+            display: none;
+            position: absolute;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3 bg-white text-white border-bottom">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="../index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <img class="bi me-2" width="120" height="60" role="img" aria-label="Bootstrap" src="../images/logo-nobg.png" alt="logo">
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mt-3 mx-3 justify-content-between mb-md-0">
+              <li><a href="todo.html" class="btn btn-outline-primary btn-sm border-bottom-1 mx-3">Interactive To-Do</a></li>
+              <li><a href="timer.html" class="btn btn-outline-primary btn-sm border-bottom-1">Animated Countdown Timer</a></li>
+              <li><a href="table.html" class="btn btn-outline-primary btn-sm border-bottom-1 mx-3 disabled">Users Table</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+            </ul>
+    
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+            </form>
+    
+            <div class="text-end">
+              <a class="btn btn-dark me-2" href="pages/signin.html">Sign In</a>
+              <a class="btn btn-outline-primary" href="pages/signup.html">Join now</a>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <div class="container mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#" onclick="showUserInfo(this, 'Bill Gates', 'Company: Microsoft<br>Position: Co-founder<br>Since: 1975')">Bill Gates</a></td>
+                    <td>billGates@example.com</td>
+                    <td>
+                        <a href="bill.html" class="btn btn-primary">Visit Profile</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="#" onclick="showUserInfo(this, 'Mark Zuckerberg', 'Company: Facebook<br>Position: CEO<br>Since: 2004')">Mark Zuckerberg</a></td>
+                    <td>markZuckerberg@example.com</td>
+                    <td>
+                        <a href="mark.html" class="btn btn-primary">Visit Profile</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="#" onclick="showUserInfo(this, 'Pavel Durov', 'Company: Telegram Messenger<br>Position: CEO, Founder<br>Since: 2013')">Pavel Durov</a></td>
+                    <td>pavelDurov@example.com</td>
+                    <td>
+                        <a href="pavel.html" class="btn btn-primary">Visit Profile</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="user-info-bubble" id="user-info-bubble">
+        <div id="bubble-content"></div>
+    </div>
+
+    <div class="container mt-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#whyTab" onclick="showTab('whyTab')">Why These People Here?</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#howTab" onclick="showTab('howTab')">How Can I Be Here</a>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-3">
+            <div id="whyTab" class="tab-pane active">
+                <p>Have you ever wondered why certain people are featured on this platform? Here's why:</p>
+                <ol>
+                    <li>These individuals have made significant contributions to their respective industries.</li>
+                    <li>They have a wealth of knowledge and experience to share with the community.</li>
+                    <li>Their achievements and innovations have had a profound impact on the world.</li>
+                    <li>They are passionate about networking and connecting with like-minded professionals.</li>
+                    <li>These users serve as inspirational figures for others aspiring to excel in their careers.</li>
+                </ol>
+                <p>By featuring such individuals, we aim to create an environment where you can learn from the best and connect with those who share your professional interests.</p>
+            </div>
+
+            <div id="howTab" class="tab-pane">
+                <p>If you want to be featured on this platform, follow these steps:</p>
+                <ol>
+                    <li>Create a profile by signing up for an account.</li>
+                    <li>Provide detailed information about yourself, your skills, and your experiences.</li>
+                    <li>Add a professional profile picture to make your profile stand out.</li>
+                    <li>Engage with other users and build a strong professional network.</li>
+                    <li>Keep your profile up to date with your latest accomplishments and projects.</li>
+                </ol>
+                <p>By following these steps, you can increase your visibility on our platform and connect with other professionals in your field.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fixed-bottom">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+              <img class="bi me-2" width="60" height="30" role="img" aria-label="Bootstrap" src="../images/logo-nobg.png" alt="logo">
+            </a>
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2023, LinkedOut</span>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Language
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">English (English)</a></li>
+              <li><a class="dropdown-item" href="#">Russian (Русский)</a></li>
+              <li><a class="dropdown-item" href="#">Italiano (Italian)</a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+<script src="../scripts/table.js"></script>
+</body>
+</html>
