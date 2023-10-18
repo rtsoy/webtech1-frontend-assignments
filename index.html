@@ -82,24 +82,24 @@
       <div class="d-flex justify-content-center container mt-3 text-center">
           <ul class="list-group list-group-horizontal">
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-              <label class="form-check-label" for="firstCheckbox">★</label>
+              <input class="form-check-input me-1" type="radio" name="rating" value="" id="firstRadio" onclick="handleRadioSelection(this)">
+              <label class="form-check-label" for="firstRadio">★</label>
             </li>
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-              <label class="form-check-label" for="secondCheckbox">★★</label>
+              <input class="form-check-input me-1" type="radio" name="rating" value="" id="secondRadio" onclick="handleRadioSelection(this)">
+              <label class="form-check-label" for="secondRadio">★★</label>
             </li>
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-              <label class="form-check-label" for="thirdCheckbox">★★★</label>
+              <input class="form-check-input me-1" type="radio" name="rating" value="" id="thirdRadio" onclick="handleRadioSelection(this)">
+              <label class="form-check-label" for="thirdRadio">★★★</label>
             </li>
             <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                <label class="form-check-label" for="thirdCheckbox">★★★★</label>
+                <input class="form-check-input me-1" type="radio" name="rating" value="" id="fourthRadio" onclick="handleRadioSelection(this)">
+                <label class="form-check-label" for="fourthRadio">★★★★</label>
               </li>
               <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                <label class="form-check-label" for="thirdCheckbox">★★★★★</label>
+                <input class="form-check-input me-1" type="radio" name="rating" value="" id="fifthRadio" onclick="handleRadioSelection(this)">
+                <label class="form-check-label" for="fifthRadio">★★★★★</label>
               </li>
           </ul>
     </div>
@@ -115,7 +115,7 @@
         </div>
         
         <div class="d-flex justify-content-center container mt-3 text-center">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-primary" onclick="validateRateUsForm()">
             Send
           </button>
 
@@ -156,5 +156,6 @@
         </div>
       </footer>
     </div>
+<script src="scripts/form-validation.js"></script>
 </body>
 </html>
