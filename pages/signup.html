@@ -27,22 +27,31 @@
         <div class="card-body">
           <div class="row align-items-start">
             <div class="col">
-              <label for="inputEmail" class="form-label">First name</label>
-              <input type="email" class="form-control" id="inputEmail">
+              <label for="inputFirstName" class="form-label">First name</label>
+              <input type="text" class="form-control" id="inputFirstName">
+              <p id="firstNameError" class="text-danger"></p>
             </div>
             <div class="col">
-              <label for="inputEmail" class="form-label">Last name</label>
-              <input type="email" class="form-control" id="inputEmail">
+              <label for="inputLastName" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="inputLastName">
+              <p id="lastNameError" class="text-danger"></p>
             </div>
           </div>
           <div class="container mt-3">
             <div class="mb-3">
               <label for="inputEmail" class="form-label">Email address</label>
               <input type="email" class="form-control" id="inputEmail">
+              <p id="emailError" class="text-danger"></p>
             </div>
             <div class="mb-3">
               <label for="inputPassword" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword">
+              <input type="password" class="form-control" id="inputPassword1">
+              <p id="passwordError1" class="text-danger"></p>
+            </div>
+            <div class="mb-3">
+              <label for="inputPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="inputPassword2">
+              <p id="passwordError2" class="text-danger"></p>
             </div>
             <div class="mb-3">
               <label for="formFile" class="form-label">Profile Picture</label>
@@ -51,10 +60,11 @@
             <div class="checkbox mb-3">
               <label>
                 <p class="fs-6">By clicking Agree, you agree to the LinkedOut User Agreement, Privacy Policy, and Cookie Policy.</p>
-                <input type="checkbox" value="remember-me"> Agree
+                <input type="checkbox" value="agree" id="agreeCheckbox"> Agree
+                <p id="checkBoxError" class="text-danger"></p>
               </label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Create Account</button>
+            <button class="w-100 btn btn-lg btn-primary" type="submit" id="registerButton">Register</button>
           </div>
         </div> 
     </div>
@@ -80,5 +90,7 @@
       </div>
     </footer>
   </div>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="../scripts/signup.js"></script> 
 </body>
 </html>
