@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedOut | Guess The Number</title>
+    <link rel="shortcut icon" type="image/jpg" href="../images/favicon.ico"/>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <style>
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #f00;
+            border-radius: 50%;
+            opacity: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="p-3 bg-white text-white border-bottom">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="../index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <img class="bi me-2" width="120" height="60" role="img" aria-label="Bootstrap" src="../images/logo-nobg.png" alt="logo">
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mt-3 mx-3 justify-content-between mb-md-0">
+              <li><a href="todo.html" class="btn btn-outline-primary btn-sm border-bottom-1 mx-3">Interactive To-Do</a></li>
+              <li><a href="timer.html" class="btn btn-outline-primary btn-sm border-bottom-1">Animated Countdown Timer</a></li>
+              <li><a href="table.html" class="btn btn-outline-primary btn-sm border-bottom-1 mx-3">Users Table</a></li>
+              <li><a href="guess-the-number.html" class="btn btn-outline-primary btn-sm border-bottom-1 disabled">Guess The Number</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+            </ul>
+    
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+            </form>
+    
+            <div class="text-end">
+              <a class="btn btn-dark me-2" href="../pages/signin.html">Sign In</a>
+              <a class="btn btn-outline-primary" href="../pages/signup.html">Join now</a>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Guess the Number Game</h1>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="alert alert-primary" id="message" role="alert">Try to guess the number between 1 and 100.</div>
+                <input type="number" id="guess" class="form-control" placeholder="Enter your guess">
+                <button id="check" class="btn btn-primary btn-block mt-3">Check Guess</button>
+                <button id="try-again" class="btn btn-primary btn-block mt-3" style="display: none;">Try again?</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="firework-container"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="../scripts/guess-the-number.js"></script> 
+</html>
