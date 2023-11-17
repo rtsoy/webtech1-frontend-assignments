@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedOut | Survey</title>
+    <link rel="shortcut icon" type="image/jpg" href="../images/favicon.ico"/>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="p-3 bg-white text-white border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center">
+                <a href="../index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img class="bi me-2" width="120" height="60" role="img" aria-label="Bootstrap" src="../images/logo-nobg.png" alt="logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-3">
+        <div id="stepIndicator" class="text-center mb-3">
+            <span class="step active">1</span>
+            <span class="step">2</span>
+            <span class="step">3</span>
+        </div>
+
+        <div id="step1" class="form-step">
+            <!-- Step 1 Content -->
+            <h5>Step 1: Personal Information</h5>
+            <div class="mb-3">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control">
+            </div>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+        <div id="step2" class="form-step">
+            <!-- Step 2 Content -->
+            <h5>Step 2: Contact Information</h5>
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control">
+            </div>
+            <button onclick="prevStep()">Previous</button>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+        <div id="step3" class="form-step">
+            <!-- Step 3 Content -->
+            <h5>Step 3: Additional Details</h5>
+            <div class="mb-3">
+                <label for="message">Message</label>
+                <textarea id="message" class="form-control" rows="3"></textarea>
+            </div>
+            <button onclick="prevStep()">Previous</button>
+            <button onclick="confirmSubmission()">Submit</button>
+        </div>
+
+        <!-- Custom Modal -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeConfirmationModal()">&times;</span>
+                <p>Is the information provided correct?</p>
+                <button onclick="handleConfirmation('yes')">Yes</button>
+                <button onclick="handleConfirmation('no')">No</button>
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        // Your existing code
+
+    // Hide all form steps except the first one
+        $('.form-step').not(':first').hide();
+
+        // Function to show the next step
+        window.nextStep = function () {
+            var currentStep = $('.form-step:visible');
+            currentStep.hide().next('.form-step').show();
+            updateStepIndicator();
+        }
+
+        // Function to show the previous step
+        window.prevStep = function () {
+            var currentStep = $('.form-step:visible');
+            currentStep.hide().prev('.form-step').show();
+            updateStepIndicator();
+        }
+
+        // Function to open confirmation modal
+        window.confirmSubmission = function () {
+            openConfirmationModal();
+        }
+
+        // Function to handle confirmation response
+        window.handleConfirmation = function (response) {
+            if (response === 'yes') {
+                // You can customize this logic based on your needs
+                alert("Success!")
+                closeConfirmationModal();
+                window.location.href = '../index.html';
+            } else {
+                closeConfirmationModal();
+            }
+        }
+
+        // Function to close confirmation modal
+        window.closeConfirmationModal = function () {
+            $('#confirmationModal').hide();
+        }
+
+        // Function to open success modal
+        window.openSuccessModal = function () {
+            $('#successModal').show();
+        }
+
+        // Function to close success modal
+        window.closeSuccessModal = function () {
+            $('#successModal').hide();
+        }
+
+        // Function to update the step indicator
+        function updateStepIndicator() {
+            var currentStep = $('.form-step:visible');
+            var stepIndex = $('.form-step').index(currentStep) + 1;
+
+            // Update the step indicator to highlight the current step
+            $('.step').removeClass('active');
+            $('.step:lt(' + stepIndex + ')').addClass('active');
+        }
+
+        // Modal functions
+        window.openConfirmationModal = function () {
+            $('#confirmationModal').show();
+        }
+
+        // Close modal if user clicks outside the modal content
+        $(window).click(function (event) {
+            if (event.target == $('#confirmationModal')[0]) {
+                closeConfirmationModal();
+            }
+        });
+
+        $(window).click(function (event) {
+            if (event.target == $('#successModal')[0]) {
+                closeSuccessModal();
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <style>
+      /* Style for the survey popup */
+      .survey-popup {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          padding: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+  </style>
 </head>
 <body>
     <header class="p-3 bg-white text-white border-bottom">
@@ -165,6 +179,11 @@
         </div>
       </footer>
     </div>
+    <div class="survey-popup" id="surveyPopup">
+      <p>Take a survey? This will help us improve our product =)</p>
+      <button onclick="redirectToSurvey()">Yes</button>
+      <button onclick="closeSurveyPopup()">No</button>
+    </div>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="scripts/form-validation.js"></script>
 <script>
@@ -208,8 +227,25 @@
           }
         }
       });
+
+      // Show the survey popup after a delay
+      setTimeout(showSurveyPopup, 1000);
   });
-</script>
+  // Function to show the survey popup
+  function showSurveyPopup() {
+      $('#surveyPopup').fadeIn();
+  }
+
+  // Function to close the survey popup
+  function closeSurveyPopup() {
+      $('#surveyPopup').fadeOut();
+  }
+
+  // Function to redirect to the survey link
+  function redirectToSurvey() {
+      // Redirect user to survey page
+      window.location.href = 'pages/survey.html';
+  }
 </script>
 </body>
 </html>
