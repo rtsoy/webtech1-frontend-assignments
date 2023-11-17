@@ -30,8 +30,8 @@
             </form>
     
             <div class="text-end">
-              <a class="btn btn-dark me-2" href="pages/signin.html">Sign In</a>
-              <a class="btn btn-outline-primary" href="pages/signup.html">Join now</a>
+              <a class="btn btn-dark me-2" href="pages/signin.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Login to existing account?">Sign In</a>
+              <a class="btn btn-outline-primary" href="pages/signup.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Create a new account?">Join now</a>
             </div>
           </div>
         </div>
@@ -76,11 +76,6 @@
             </div>
           </div>
       </div>
-
-      <div class="container mt-3">
-        <p id="totalClickCount" class="text-body-secondary opacity-50">Total Click Count: 0</p>
-      </div>
-
       <hr>  
       <div class="d-flex justify-content-center container mt-3 text-center">
         <h5>Rate Us!</h5>
@@ -163,16 +158,12 @@
       </footer>
     </div>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="scripts/form-validation.js"></script>
 <script>
-  // Initialize the total click count
-  let totalClicks = 0;
-
-  // Click handler to update the click count
-  $("html").on("click", function () {
-      totalClicks += 1;
-      $("#totalClickCount").text(`Total Click Count: ${totalClicks}`);
+  // Enable tooltips with jQuery
+  $(document).ready(function(){
+      $('[data-bs-toggle="tooltip"]').tooltip();
   });
 </script>
-<script src="scripts/form-validation.js"></script>
 </body>
 </html>
